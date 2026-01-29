@@ -43,7 +43,7 @@ class CartService:
         del cart_data[product_id]
         return cart_data
     
-    def get_cart_detaild(self, cart_data: Dict[int, int]) -> CartResponse:
+    def get_cart_details(self, cart_data: Dict[int, int]) -> CartResponse:
         if not cart_data:
             return CartResponse(items = [], total=0.0, item_count=0)
         

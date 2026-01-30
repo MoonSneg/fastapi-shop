@@ -12,9 +12,9 @@ class Product(Base):
     price = Column(Float, nullable=False)
     category_id = Column(Integer, ForeignKey("categories.id"), nullable=False)
     image_url = Column(String)
-    created_at = Column(DateTime, default=datetime.now(datetime.timezone.utc))
+    created_at = Column(DateTime, default=datetime.utcnow())
     
-    category = relationship("Category", ack_populates="products")
+    category = relationship("Category", back_populates="products")
     
     def __repr__(self):
        return f"<Product(id={self.id}, name='{self.name}', price={self.price})>" 

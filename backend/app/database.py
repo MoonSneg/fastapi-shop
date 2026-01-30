@@ -5,7 +5,7 @@ from .config import settings
 
 engine = create_engine(
     settings.database_url,
-    connecnt_args={"check_same_thread": False}
+    connect_args={"check_same_thread": False}
 )
 
 

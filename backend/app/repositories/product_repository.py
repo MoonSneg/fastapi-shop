@@ -23,7 +23,7 @@ class ProductRepository:
             self.db.query(Product)
             .options(joinedload(Product.category))
             .filter(Product.category_id == category_id)
-            .all
+            .all()
         )
 
     def create(self, product_data: ProductCreate) -> Product:
